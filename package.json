@@ -1,0 +1,22 @@
+{
+  "name": "college-scorecard-reporting-api-ndixon",
+  "version": "1.0.0",
+  "description": "A service that provides aggregated and transformed U.S. Department of Education College Scorecard data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nathandxn/college-scorecard-terraform-ndixon.git"
+  },
+  "keywords": [
+    "education"
+  ],
+  "author": "Nathan Dixon <nathandxn@gmail.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/nathandxn/college-scorecard-terraform-ndixon/issues"
+  },
+  "homepage": "https://github.com/nathandxn/college-scorecard-terraform-ndixon#readme"
+}
