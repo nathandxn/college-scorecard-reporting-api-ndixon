@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/nathandxn/college-scorecard-terraform-ndixon/issues"
   },
-  "homepage": "https://github.com/nathandxn/college-scorecard-terraform-ndixon#readme"
+  "homepage": "https://github.com/nathandxn/college-scorecard-terraform-ndixon#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
 }
