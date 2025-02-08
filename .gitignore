@@ -36,3 +36,6 @@ uploads
 
 # Ignore playwright screenshots captured on a Mac.
 *-darwin.png
+
+# linting
+.eslintcache
