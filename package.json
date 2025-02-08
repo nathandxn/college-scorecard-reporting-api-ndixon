@@ -10,7 +10,8 @@
     "lint": "run-p --aggregate-output lint:*",
     "lint:commit": "commitlint --from=$(git merge-base origin/master HEAD)",
     "lint:code": "eslint --color --cache '**/*.{js,ts}'",
-    "lint:format": "prettier --c '**/*.{js,ts,json,yaml}'",
+    "lint:format": "npx prettier '**/*.{js,ts,json,yaml}' -c",
+    "prettier-all": "npx prettier . -w",
     "prepare": "husky"
   },
   "repository": {
