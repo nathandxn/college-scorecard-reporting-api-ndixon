@@ -1,5 +1,6 @@
 import globals from 'globals';
 import pluginJs from '@eslint/js';
+import eslintConfigPrettier from 'eslint-config-prettier';
 
 // latest rules: https://eslint.org/docs/latest/rules/
 
@@ -12,4 +13,5 @@ export default [
       'no-duplicate-imports': 'error',
     },
   },
+  eslintConfigPrettier,
 ];
