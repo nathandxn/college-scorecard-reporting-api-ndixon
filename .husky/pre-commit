@@ -1,5 +1,5 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-npm run lint:format:check:all
+npm run lint:commit
 npm run lint:code
