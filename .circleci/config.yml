@@ -27,6 +27,8 @@ jobs:
     description: Run lint checks
     steps:
       - checkout_and_install
+      - run:
+          command: npm run lint
 
 
 workflows:
