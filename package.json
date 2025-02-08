@@ -11,6 +11,7 @@
     "lint:commit": "commitlint --from=$(git merge-base origin/master HEAD)",
     "lint:code": "eslint --color --cache '**/*.{js,ts}'",
     "lint:format": "npx prettier '**/*.{js,ts,json,yaml}' -c",
+    "lint:secret": ".bin/gitleaks detect --verbose --redact",
     "prettier-all": "npx prettier . -w",
     "prepare": "husky"
   },
