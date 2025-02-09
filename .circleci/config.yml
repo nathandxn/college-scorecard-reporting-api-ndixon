@@ -30,7 +30,17 @@ jobs:
       - run:
           command: npm run lint
 
+  test:
+    <<: *base
+    description: Run lint checks
+    steps:
+      - checkout_and_install
+      - run:
+          command: npm run test
+
+
 workflows:
   build-and-test:
     jobs:
       - lint
+      - test
