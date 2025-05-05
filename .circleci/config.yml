@@ -4,6 +4,7 @@
 version: 2.1
 orbs:
   node: circleci/node@7.1.0
+  aws-ecr: circleci/aws-ecr@9.5.1
 
 base: &base
   resource_class: small
