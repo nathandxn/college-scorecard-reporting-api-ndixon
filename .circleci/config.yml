@@ -39,9 +39,23 @@ jobs:
       - run:
           command: npm run test
 
+  build-and-push:
+    description: Run image and push to remote ECR
+    resource_class: small
+    docker:
+      - image: cimg/base:2025.05
+    steps:
+      - aws-ecr/build-and-push-image:
+          repo: "${AWS_RESOURCE_NAME_PREFIX}"
+          tag: "${CIRCLE_SHA1}"
+
 
 workflows:
   build-and-test:
     jobs:
       - lint
       - test
+
+  build-and-deploy:
+    jobs:
+      - build-and-push
