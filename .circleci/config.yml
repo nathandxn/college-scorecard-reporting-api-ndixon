@@ -42,6 +42,10 @@ jobs:
 
   build-and-push:
     description: Run image and push to remote ECR
+    filters:
+      branches:
+        only:
+          - master
     resource_class: small
     docker:
       - image: cimg/base:2025.05
