@@ -50,8 +50,8 @@ jobs:
           auth:
             - aws-cli/setup:
                 role_arn: ${AWS_ROLE_ARN}
-                aws-region: ${AWS_REGION}
-                profile-name: "OIDC-PROFILE"
+                region: ${AWS_REGION}
+                profile_name: "OIDC-PROFILE"
           repo: ${AWS_RESOURCE_NAME_PREFIX}
           tag: ${CIRCLE_SHA1}
 
