@@ -46,6 +46,9 @@ jobs:
     docker:
       - image: cimg/base:2025.05
     steps:
+      - checkout
+      - setup_remote_docker:
+          docker_layer_caching: false
       - aws-ecr/build_and_push_image:
           auth:
             - aws-cli/setup:
