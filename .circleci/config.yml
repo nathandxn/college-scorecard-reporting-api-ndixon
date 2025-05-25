@@ -48,12 +48,19 @@ jobs:
       - checkout_and_install
       - snyk/install:
           cli-version: 1.1295.2
+      - setup_remote_docker:
+          docker_layer_caching: false
       - run:
           name: Run snyk open source scan
           command: snyk test --all-projects --org=${SNYK_CICD_ORGANIZATION} --severity-threshold=high
       - run:
           name: Run snyk code scan
           command: snyk code test --org=${SNYK_CICD_ORGANIZATION} --severity-threshold=high
+      - run: 
+          name: Run snyk container scan
+          command: |
+            docker build -t $AWS_ECR_REPOSITORY_NAME .
+            snyk container test $AWS_ECR_REPOSITORY_NAME --file=Dockerfile --org=${SNYK_CICD_ORGANIZATION} --severity-threshold=high
 
   build-and-push:
     description: Run image and push to remote ECR
