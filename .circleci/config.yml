@@ -49,9 +49,11 @@ jobs:
       - aws-ecr/build_and_push_image:
           auth:
             - aws-cli/setup:
-                role_arn: "${AWS_ROLE_ARN}"
-          repo: "${AWS_RESOURCE_NAME_PREFIX}"
-          tag: "${CIRCLE_SHA1}"
+                role_arn: ${AWS_ROLE_ARN}
+                aws-region: ${AWS_REGION}
+                profile-name: "OIDC-PROFILE"
+          repo: ${AWS_RESOURCE_NAME_PREFIX}
+          tag: ${CIRCLE_SHA1}
 
 
 workflows:
