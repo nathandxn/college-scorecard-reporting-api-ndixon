@@ -44,7 +44,7 @@ jobs:
     description: Run image and push to remote ECR
     resource_class: small
     docker:
-      - image: cimg/base:2025.05
+      - image: cimg/ubuntu-2004:2023.07.1
     steps:
       - aws-ecr/build_and_push_image:
           auth:
