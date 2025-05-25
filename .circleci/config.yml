@@ -41,6 +41,17 @@ jobs:
       - run:
           command: npm run test
 
+  security-scans:
+    <<: *base
+    description: Run security scans
+    steps:
+      - checkout_and_install
+      - snyk/install:
+          cli-version: 1.1295.2
+      - run:
+          name: Run snyk open source scan
+          command: snyk test --all-projects --org=${SNYK_CICD_ORGANIZATION} --severity-threshold=high
+
   build-and-push:
     description: Run image and push to remote ECR
     resource_class: small
@@ -66,6 +77,9 @@ workflows:
       - test:
           requires:
             - lint
+      - security-scans:
+          requires:
+            - test
 
   build-and-deploy:
     jobs:
