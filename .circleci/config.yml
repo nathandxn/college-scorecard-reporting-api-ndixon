@@ -55,7 +55,7 @@ jobs:
                 role_arn: ${AWS_ROLE_ARN}
                 region: ${AWS_REGION}
                 profile_name: "OIDC-PROFILE"
-          repo: ${AWS_RESOURCE_NAME_PREFIX}
+          repo: ${AWS_ECR_REPOSITORY_NAME}
           tag: ${CIRCLE_SHA1}
 
 
