@@ -46,6 +46,11 @@ jobs:
     docker:
       - image: cimg/base:2025.05
     steps:
+      - run:
+          name: Debug OIDC Environment
+          command: |
+            echo "ORG_ID: $CIRCLE_OIDC_TOKEN"
+            echo "PROJECT_ID: $CIRCLE_PROJECT_ID"
       - aws-ecr/build_and_push_image:
           auth:
             - aws-cli/setup:
