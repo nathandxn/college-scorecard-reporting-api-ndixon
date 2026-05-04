@@ -1,4 +1,4 @@
-FROM node:23.11.1-alpine3.21
+FROM node:25.9-alpine3.22
 
 # set working directory inside the container
 WORKDIR /app
@@ -7,6 +7,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # install dependencies
+RUN npm install -g npm@11.13.0
 RUN npm i
 
 # copy the entire project (this will exclude files in .dockerignore)
