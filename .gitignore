@@ -19,6 +19,7 @@ api-docs
 .vscode/*
 !.vscode/extensions.json
 !.vscode/settings.json
+*.code-workspace
 
 # Noise
 .DS_Store
