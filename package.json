@@ -2,17 +2,17 @@
   "name": "college-scorecard-reporting-api-ndixon",
   "version": "1.0.0",
   "description": "A service that provides aggregated and transformed U.S. Department of Education College Scorecard data",
-  "main": "index.js",
+  "main": "src/server.js",
   "type": "module",
   "scripts": {
     "test": "jest",
-    "start": "nodemon index.js",
+    "start": "nodemon src/server.js",
     "lint": "run-p --aggregate-output lint:*",
     "lint:commit": "commitlint --from=$(git merge-base origin/master HEAD)",
     "lint:code": "eslint --color --cache '**/*.{js,ts}'",
     "lint:format": "npx prettier '**/*.{js,ts,json,yaml}' -c",
     "lint:secret": ".bin/gitleaks detect --verbose --redact",
-    "prettier-all": "npx prettier . -w",
+    "prettier-all": "npx prettier src -w",
     "prepare": "husky"
   },
   "repository": {

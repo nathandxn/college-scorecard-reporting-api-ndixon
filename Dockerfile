@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 3000
 
 # start application
-ENTRYPOINT ["node", "index.js"]
+ENTRYPOINT ["node", "src/server.js"]
