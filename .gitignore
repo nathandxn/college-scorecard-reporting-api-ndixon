@@ -41,3 +41,7 @@ uploads
 # linting / local tools
 .eslintcache
 /.bin/
+
+# safeguard against keys ever being committed
+*.p8
+*.pem
