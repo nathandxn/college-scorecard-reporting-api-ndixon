@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "jest",
-    "start": "nodemon src/server.js",
+    "start": "nodemon --exec 'node --env-file-if-exists=.env' src/server.js",
     "lint": "run-p --aggregate-output lint:*",
     "lint:commit": "commitlint --from=$(git merge-base origin/master HEAD)",
     "lint:code": "eslint --color --cache '**/*.{js,ts}'",
