@@ -7,7 +7,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # install dependencies
-RUN npm install -g npm@11.13.0
+RUN npm install -g npm@11.14.0
 RUN npm i
 
 # copy the entire project (this will exclude files in .dockerignore)
