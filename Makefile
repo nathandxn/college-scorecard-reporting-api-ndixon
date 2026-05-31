@@ -29,3 +29,12 @@ endif
 .PHONY: docker-build
 docker-build: ## build docker image locally
 	docker build . -t "college-scorecard-reporting-api-ndixon:latest"
+
+.PHONY: docker-run
+docker-run: ## run docker image locally
+	docker run --rm -d \
+  		--env-file .env \
+  		-e SNOWFLAKE_PRIVATE_KEY_PATH=/secrets/snowflake.p8 \
+  		-v ~/.snowflake/svc_college_scorecard_api.p8:/secrets/snowflake.p8:ro \
+  		-p 3000:3000 \
+  		college-scorecard-reporting-api-ndixon:latest
