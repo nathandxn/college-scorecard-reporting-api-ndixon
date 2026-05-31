@@ -1,7 +1,7 @@
 import http from 'node:http';
 import app from './app.js';
 import { appConfig } from './common/config.js';
-import { connect, destroy } from './common/snowflake.js';
+import { warmup, destroy } from './common/snowflake.js';
 
 const server = http.createServer(app);
 
@@ -17,7 +17,7 @@ process.on('SIGTERM', () => shutdown('SIGTERM'));
 process.on('SIGINT', () => shutdown('SIGINT'));
 
 try {
-  await connect();
+  await warmup();
   console.log('Connected to Snowflake');
   server.listen(appConfig.port, () => {
     console.log(`API listening on port ${appConfig.port}...`);
