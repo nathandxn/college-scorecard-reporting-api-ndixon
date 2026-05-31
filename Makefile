@@ -25,3 +25,7 @@ ifndef CI
 endif
 	mkdir -p ${BIN}
 	curl -sSfL 'https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_V}/gitleaks_${GITLEAKS_V}_${OS}_${GITLEAKS_TARGET_ARCH}.tar.gz' | tar -xz -C ${BIN}
+
+.PHONY: docker-build
+docker-build: ## build docker image locally
+	docker build . -t "college-scorecard-reporting-api-ndixon:latest"
