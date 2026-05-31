@@ -1,9 +1,28 @@
-import http from 'http';
+import http from 'node:http';
 import app from './app.js';
+import { appConfig } from './common/config.js';
+import { connect, destroy } from './common/snowflake.js';
 
-const port = process.env.PORT || 3000;
-
-// express application qualifies as a request handler
 const server = http.createServer(app);
 
-server.listen(port);
+const shutdown = async (signal) => {
+  console.log(`${signal} received, shutting down...`);
+  server.close(async () => {
+    await destroy();
+    process.exit(0);
+  });
+};
+
+process.on('SIGTERM', () => shutdown('SIGTERM'));
+process.on('SIGINT', () => shutdown('SIGINT'));
+
+try {
+  await connect();
+  console.log('Connected to Snowflake');
+  server.listen(appConfig.port, () => {
+    console.log(`API listening on port ${appConfig.port}...`);
+  });
+} catch (err) {
+  console.error('Failed to start:', err);
+  process.exit(1);
+}
