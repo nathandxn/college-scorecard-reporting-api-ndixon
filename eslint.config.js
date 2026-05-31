@@ -12,6 +12,10 @@ export default [
   {
     rules: {
       'no-duplicate-imports': 'error',
+      'no-unused-vars': [
+        'error',
+        { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
+      ],
     },
   },
   eslintConfigPrettier,
