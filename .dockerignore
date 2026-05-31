@@ -10,3 +10,10 @@ node_modules
 !.vscode/extensions.json
 !.vscode/settings.json
 *.code-workspace
+
+# local env variables
+.env
+
+# safeguard against keys ever being built into the image
+*.p8
+*.pem
