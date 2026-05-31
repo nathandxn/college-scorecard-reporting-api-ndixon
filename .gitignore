@@ -42,6 +42,9 @@ uploads
 .eslintcache
 /.bin/
 
+# local env variables
+.env
+
 # safeguard against keys ever being committed
 *.p8
 *.pem
