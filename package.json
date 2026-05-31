@@ -29,7 +29,8 @@
   },
   "homepage": "https://github.com/nathandxn/college-scorecard-reporting-api-ndixon#readme",
   "dependencies": {
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "snowflake-sdk": "^2.4.3"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.7.1",
